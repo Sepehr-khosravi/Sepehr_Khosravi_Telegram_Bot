@@ -1,2 +1,50 @@
-venv
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# ---------- Virtual environments ----------
+.venv/
+venv/
+env/
+ENV/
+
+# ---------- Environment / secrets ----------
 .env
+.env.*
+!.env.example
+
+# ---------- Database ----------
+*.db
+*.sqlite
+*.sqlite3
+booking.db
+
+# ---------- Logs ----------
+*.log
+logs/
+
+# ---------- IDE / editor ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+
+# ---------- Testing / coverage ----------
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ---------- Telegram / runtime ----------
+*.session

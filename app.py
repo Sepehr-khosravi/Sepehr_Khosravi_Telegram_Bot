@@ -1,22 +1,17 @@
-import os 
-from dotenv import load_dotenv
 import telebot
+from config import BOT_TOKEN
+from database import init_db
+from handlers import start, slots, my_bookings, admin
 
-load_dotenv()
+bot = telebot.TeleBot(BOT_TOKEN)
 
-token = os.getenv("BOT_TOKEN")
+init_db()
 
-if not token :
-    raise ValueError("You need to set BOT_TOKEN in you .env file.")
+start.register(bot)
+slots.register(bot)
+my_bookings.register(bot)
+admin.register(bot)
 
-
-bot = telebot.TeleBot(token)
-
-@bot.message_handler(commands=['start'])
-def send_welcome(message) :
-    bot.reply_to(message, "Hey!, I'm your project booking bot. Use \book to find a free slot.")
-
-
-if __name__ == "__main__" :
+if __name__ == "__main__":
     print("Bot is running...")
     bot.infinity_polling()
