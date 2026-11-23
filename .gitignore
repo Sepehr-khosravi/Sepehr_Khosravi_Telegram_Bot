@@ -48,3 +48,11 @@ htmlcov/
 
 # ---------- Telegram / runtime ----------
 *.session
+
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+booking.db
+*.db
